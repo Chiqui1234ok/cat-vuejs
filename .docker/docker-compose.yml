@@ -1,0 +1,12 @@
+services:
+  vuejs-app:
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../app:/app # Asegúrate de que ../app es la ruta correcta a tu carpeta `app`
+    environment:
+      - NODE_ENV=development
+    command: yarn run serve
